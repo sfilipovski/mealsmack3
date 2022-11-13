@@ -1,6 +1,6 @@
 # mealsmack
 
-dians-homework1
+<h3>dians-homework1</h3>
 
 <hr>
 <br>
@@ -12,4 +12,4 @@ dians-homework1
 <br>
 <hr>
 
-Сергеј Филиповски 181281
+<h3>Сергеј Филиповски 181281</h3>
