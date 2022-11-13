@@ -10,24 +10,8 @@ public class RawDataFiler implements Filter<String>{
                 s+=parts[i]+",";
             }
             s+="\n";
-            return s.substring(0,s.length()-1);
+            return s.substring(0,s.length()-2);
         }
-        return "";
-
-
-
-
-
-
-
-        /*StringBuilder stringBuilder = new StringBuilder();
-        for(int i =0 ; i < parts.length; i++){
-            if(parts[i].equals(" ") || parts[i].isEmpty()){
-                return "";
-            }
-            stringBuilder.append(parts[i]+",");
-        }
-        return stringBuilder.toString().substring(0,stringBuilder.length()-1);*/
-
+        return " ";
     }
 }
