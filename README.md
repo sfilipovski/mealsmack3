@@ -8,5 +8,6 @@ dians-homework1
 
 Сите податоци се превземени од  OpenStreetMap преку веб алатката https://overpass-turbo.eu/ .
 
+<hr>
 
 Сергеј Филиповски 181281
