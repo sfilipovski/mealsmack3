@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <title>Mealsmack</title>
+</head>
+<body style="background-color: rgba(201, 209, 208, 0.342); font-family: 'Poppins', sans-serif;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 4rem;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="margin-left: 2rem; ">
+            <a class="navbar-brand" href="#" style="font-weight: 700; text-align: right;"><img src="C:\Users\Sergey\Desktop\DIANS\mealsmack\src\main\resources\static\images\logo.png" width="40px" height="40px" style="margin-right:1rem">Mealsmack</a>
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="app.html" style="font-weight: 600; margin-left: 68rem;" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" style="font-weight: 600; margin-left: 1.5rem;">Restaurants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" style="font-weight: 600; margin-left: 1.5rem;" >About</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div style="margin: 3rem; text-align: center;" >
+</div>
+
+<div style="display: flex; justify-content: space-evenly;">
+    <iframe
+            width="1200"
+            height="720"
+            frameborder="0" style="border:0"
+            referrerpolicy="no-referrer-when-downgrade"
+            th:src="@{'https://maps.google.com/maps?q={latitude}%2C{longitude}&width=100%25&amp height=600&amp;hl=en&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+            (latitude=${restaurant.getLat()},
+            longitude =${restaurant.getLon()})}"
+            allowfullscreen>
+    </iframe>
+<!--
+
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAUXwtT-Azg9D5yQCXI7OI5Q0dC1TAXXIo&q=41.9953933%2C21.4315704"
+
+    th:src="@{'https://maps.google.com/maps?q={adresa}&width=100%25&amp height=600&amp;hl=en&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+    (latitude=${DetailedViewLab.get().getLatitude()},
+    longitude =${DetailedViewLab.get().getLongitude()},
+    adresa = ${DetailedViewLab.get().getAdresa()} )}"
+-->
+
+
+</div>
+
+<div style="margin: 4rem;"></div>
+
+
+
+    <table class="table table-hover" style="margin-left:2rem; width: 90%; ">
+        <thead style="font-size: large;">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Municipality</th>
+            <th scope="col">Cuisine</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-light" th:each="restaurant : ${restaurants}">
+            <td scope="col" th:text="${restaurant.getName()}"></td>
+            <td th:text="${restaurant.getMunicipality()}"></td>
+            <td th:text="${restaurant.getCuisine()}"></td>
+
+            <td style="text-align: center;"><button type="submit" class="btn btn-info">View</button></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <hr style="margin-top: 3rem;">
+</div>
+
+<p style="text-align: center; font-weight: 700; font-size: large;">&copy; Sergej Filipovski 181281</p>
+
+</body>
+</html>

@@ -10,4 +10,5 @@ public class MealsmackApplication {
         SpringApplication.run(MealsmackApplication.class, args);
     }
 
+
 }
