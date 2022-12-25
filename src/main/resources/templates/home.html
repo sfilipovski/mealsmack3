@@ -16,24 +16,39 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="margin-left: 2rem; ">
-            <a class="navbar-brand" href="#" style="font-weight: 700; text-align: right;">
+            <a class="navbar-brand" th:href="@{/home}" style="font-weight: 700; text-align: right;">
                 <img src="images/logo.png" width="40px" height="40px" style="margin-right:1rem" alt="logo">Mealsmack</a>
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="app.html" style="font-weight: 600; margin-left: 68rem;" >Home</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/home}" style="font-weight: 600; margin-left: 68rem;" >Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#" style="font-weight: 600; margin-left: 1.5rem;">Restaurants</a>
+                    <a class="nav-link active" th:href="@{/restaurants}" style="font-weight: 600; margin-left: 1.5rem;">Restaurants</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#" style="font-weight: 600; margin-left: 1.5rem;" >About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/login}" style="font-weight: 600; margin-left: 1.5rem;" >Login</a>
                 </li>
             </ul>
 
         </div>
     </div>
 </nav>
+
+
+<div class="row mb-4" style="margin: 3rem">
+    <div class="col d-flex justify-content-center">
+        <h1>Take a look at all the places <br> </h1>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+        <h1><u>you can dine in Skopje!</u><br> </h1>
+    </div>
+</div>
 
 <div style="margin: 3rem; text-align: center;" >
 </div>
@@ -42,65 +57,41 @@
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1jswcVd0ViFzvGXjZWzB1-XRF51MT5k8&ehbc=2E312F" width="1240" height="840"></iframe>
 </div>
 
-<div style="margin: 4rem;"></div>
-
-
-
-
-<div style="background-color: rgba(207, 207, 207, 0.655);">
-    <div class="progress" style="width: 100%; margin-top: 2rem; margin-bottom: 2rem;">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+<div class="row mb-4" style="margin: auto; width: 70%; font-style: italic">
+    <div class="col d-flex justify-content-center" style="margin-top: 1rem">
+        <div style="width:10px;height:10px;border:1px solid #000; background: rgb(2,136,209)"><p style="margin-left: 1rem"><u>Centar</u></p></div>
+    </div>
+    <div class="col d-flex justify-content-center" style="margin-top: 1rem">
+        <div style="width:10px;height:10px;border:1px solid #000; background: rgb(230,81,0)"><p style="margin-left: 1rem"><u>Aerodrom</u></p></div>
+    </div>
+    <div class="col d-flex justify-content-center" style="margin-top: 1rem">
+        <div style="width:10px;height:10px;border:1px solid #000; background: rgb(255,214,0)"><p style="margin-left: 1rem"><u>Karposh</u></p></div>
+    </div>
+    <div class="col d-flex justify-content-center" style="margin-top: 1rem">
+        <div style="width:10px;height:10px;border:1px solid #000; background: rgb(0,151,167)"><p style="margin-left: 1rem"><u>Kisela Voda</u></p></div>
+    </div>
+    <div class="col d-flex justify-content-center" style="margin-top: 1rem">
+        <div style="width:10px;height:10px;border:1px solid #000; background: rgb(230,81,0)"><p style="margin-left: 1rem"><u>Gjorche Petrov</u></p></div>
+    </div>
+    <div class="col d-flex justify-content-center" style="margin-top: 1rem">
+        <div style="width:10px;height:10px;border:1px solid #000; background: rgb(121,85,72)"><p style="margin-left: 1rem"><u>Cair</u></p></div>
+    </div>
+    <div class="col d-flex justify-content-center" style="margin-top: 1rem">
+        <div style="width:10px;height:10px;border:1px solid #000; background: rgb(175,180,43)"><p style="margin-left: 1rem"><u>Gazi Baba</u></p></div>
     </div>
 
-    <form action="" method="post" style="margin-left: 2rem;">
-        <label >Select municipality: </label>
-        <select name="language" id="language">
-            <option value="all" selected>--</option>
-            <option value="Karposh" >Karposh</option>
-            <option value="Centar">Centar</option>
-            <option value="Aerodrom">Aerodrom</option>
-            <option value="Kisela Voda" >Kisela Voda</option>
-            <option value="Gazi Baba" >Gazi Baba</option>
-            <option value="Gjorche Petrov">Gjorche Petrov</option>
-            <option value="Cair">Cair</option>
-        </select>
-    </form>
-
-    <form action="" method="post" style="margin-left: 2rem;">
-        <label>Choose cuisine: </label>
-        <input type="text" placeholder="Search cuisine..">
-    </form>
-
-
-
-    <table class="table table-hover" style="margin-left:2rem; width: 100%;">
-        <thead style="font-size: large;">
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Municipality</th>
-            <th scope="col">Cuisine</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="table-light" th:each="restaurant : ${restaurants}">
-            <td scope="col" th:text="${restaurant.getName()}"></td>
-            <td th:text="${restaurant.getMunicipality()}"></td>
-            <td><th:block th:text="${restaurant.getCuisine().get(0)}"></th:block>
-                <span th:if="${restaurant.getCuisine().size()>3}">,
-                    <th:block th:text="${restaurant.getCuisine().get(1)}"></th:block>,
-                <th:block th:text="${restaurant.getCuisine().get(2)}"></th:block></span>  </td>
-
-            <td style="text-align: center;"><a class="btn btn-info" th:href="@{'/home/map/{id}' (id=${restaurant.getId()})}">View</a></td>
-            <!--<td style="text-align: center;"><button type="submit" class="btn btn-info" th:href="@{'/home/map/{id}' (id=${restaurant.getId()})}">View</button></td>-->
-        </tr>
-
-        </tbody>
-    </table>
-
-    <hr style="margin-top: 3rem;">
 </div>
 
-<p style="text-align: center; font-weight: 700; font-size: large;">&copy; Sergej Filipovski 181281</p>
+<div class="row mb-4" style="margin: auto;">
+<div class="col d-flex justify-content-center" style="margin-top: 4rem">
+    <h5>..or get a more <a th:href="@{/restaurants}" style="font-style: italic">detailed view</a></h5>
+</div>
+</div>
 
+<hr style="margin-top: 3rem;">
+
+<div >
+<p style="text-align: center; font-weight: 700; font-size: large;margin-top: 1rem">&copy; Sergej Filipovski 181281</p>
+</div>
 </body>
 </html>

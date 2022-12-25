@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Component
 public class CleanData {
@@ -46,6 +48,7 @@ public class CleanData {
             List<String> cuisines = new ArrayList<>();
             String []cuisine = data[5].split(";");
             cuisines.addAll(Arrays.asList(cuisine));
+
 
             DataHolder.restaurants.add(new Restaurant(data[1], data[2], data[3],data[4],cuisines,data[6]));
         }
